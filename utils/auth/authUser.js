@@ -86,6 +86,9 @@ export class AuthUser {
 	 * 認証済み状態取得
 	 */
 	static GetAuthenticated = () => {
+		if (!AuthUser._intialized) {
+			console.log("AuthUser class is not initializes.");
+		}
 		return AuthUser._state.Authenticated;
 	}
 
