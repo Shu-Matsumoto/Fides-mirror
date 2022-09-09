@@ -97,6 +97,9 @@ export class AuthUser {
 	 * @returns 
 	 */
 	static GetAuthenticatedUser = () => {
+		if (!AuthUser._intialized) {
+			console.log("AuthUser class is not initializes.");
+		}
 		if (AuthUser._state.Authenticated) {
 			return AuthUser._state.User;
 		} else {
